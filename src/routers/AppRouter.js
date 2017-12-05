@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link, NavLink } from 'react-router-dom';
+import { Router, Route, Switch, Link, NavLink } from 'react-router-dom';
 import RegisterPage from '../components/RegisterPage';
 import Header from '../components/Header';
 import DashBoard from '../components/DashBoard';
@@ -7,16 +7,17 @@ import AddTodoPage from '../components/AddTodoPage';
 import EditTodoPage from '../components/EditTodoPage';
 import NotFoundPage from '../components/NotFoundPage';
 import createHistory from 'history/createBrowserHistory';
-import LoginPage from '../components/Login'
+import LoginPage from '../components/LoginPage';
 
-export const history = createhistory();
+export const history = createHistory();
 
 const AppRouter = () => (
   <Router history={history}>
     <div>
       <Header />
       <Switch>
-        <Route path="/" exact component={DashBoard}/>
+        <Route path="/" exact component={LoginPage}/>
+        <Route path="/dashboard" component={DashBoard} />
         <Route path="/add" component={AddTodoPage} />
         <Route path="/edit/:id" component={EditTodoPage} />
         <Route component={ NotFoundPage } />

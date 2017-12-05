@@ -7,15 +7,17 @@ import AppRouter, { history } from './routers/AppRouter';
 import NotFoundPage from './components/NotFoundPage';
 import LoadingPage from './components/LoadingPage';
 
-let hasRendered = false;
-const renderApp = () => {
-  if(!hasRendered) {
-    reactDOM.render(jsx, document.getElementById('app'));
-    hasRendered = true;
-  }
-};
+// let hasRendered = false;
+// const renderApp = () => {
+//   if(!hasRendered) {
+//     ReactDOM.render(jsx, document.getElementById('app'));
+//     hasRendered = true;
+//   }
+// };
 
-ReactDOM.render(<LoadingPage />, document.getElementById('app'));
+ReactDOM.render(<AppRouter />, document.getElementById('app'));
+
+// renderApp();
 
 const jsx = (
   <AppRouter/>

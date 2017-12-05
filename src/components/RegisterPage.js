@@ -42,6 +42,7 @@ class RegisterPage extends React.Component {
         password: `${this.state.password}`
       }).then((res) => {
         console.log(res);
+        this.setState(() => ({ password: ''}))
       }).catch((e) => {
         console.log(e);
       });
